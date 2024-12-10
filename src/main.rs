@@ -58,7 +58,7 @@ fn main() {
     let (success, ip) = update().unwrap();
 
     match success {
-        Success::Eq => println!("[{}] ok(eq): {}", secs_since_epoch, ip.to_string()),
-        Success::Ne => println!("[{}] ok(ne): {}", secs_since_epoch, ip.to_string()),
+        Success::Eq => println!("[{secs_since_epoch}] ok(eq): {ip}"),
+        Success::Ne => println!("[{secs_since_epoch}] ok(ne): {ip}"),
     };
 }
