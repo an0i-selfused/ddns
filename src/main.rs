@@ -50,12 +50,12 @@ fn update() -> Result<(Success, Ipv4Addr), Box<dyn std::error::Error>> {
 }
 
 fn main() {
+    let (success, ip) = update().unwrap();
+
     let secs_since_epoch = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .unwrap()
         .as_secs();
-
-    let (success, ip) = update().unwrap();
 
     match success {
         Success::Eq => println!("[{secs_since_epoch}] ok(eq): {ip}"),
